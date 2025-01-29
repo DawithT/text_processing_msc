@@ -1,6 +1,6 @@
 """
 Szisztematikus kulcsszo alapu irodalom gyujtes es feldolgozas: 
-a bel strukturalis vagy immunologiai funkciojanak karosodasat jelzo szerologiai biomarkerek bel es majbetegsegekben
+a bel strukturalis vagy immunologiai funkciojanak karosodasat jelzo szerologiai biomarkerek bel- es majbetegsegekben
 """
 import spacy
 import re
