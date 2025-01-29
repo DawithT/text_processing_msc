@@ -27,7 +27,7 @@ from nltk.tokenize import word_tokenize
 import nltk
 from itertools import chain
 
-# Download required NLTK data
+# A szukseges NLTK adatok letoltese
 nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('averaged_perceptron_tagger')
@@ -65,19 +65,19 @@ class Config:
         self.TIMESTAMP = datetime.now().strftime("%Y%m%d_%H%M%S")
         self.VISUALIZATION_DIR = self.OUTPUT_DIR / "visualizations"
         
-        # API Configuration
+        # API konfiguracio
         self.ENTREZ_EMAIL = "tornai.david@med.unideb.hu"
         self.PUBTATOR_BASE_URL = "https://www.ncbi.nlm.nih.gov/research/pubtator-api/publications/export/biocjson"
         self.RATE_LIMIT = 0.34
         
-        # Processing Configuration
+        # Feldolgozas konfiguracio
         self.MAX_RESULTS = 200
         self.BATCH_SIZE = 40
         self.RETRY_COUNT = 3
         self.RETRY_DELAY = 5
         self.SIGNIFICANCE_THRESHOLD = 0.05
         
-        # Search Configuration
+        # Kereses konfiguracio
         self.DEFAULT_SEARCH_QUERY = """
         (("intestinal barrier"[Title/Abstract] OR "gut barrier"[Title/Abstract] OR 
         "intestinal permeability"[Title/Abstract] OR "gut permeability"[Title/Abstract]) AND 
