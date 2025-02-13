@@ -33,29 +33,29 @@ def create_directory_structure():
     
     # Létrehoz .env fájlokat sablon tartalommal
     env_content = """# Biomarker Analysis Configuration
-ENTREZ_EMAIL=your.email@example.com
-MAX_RESULTS=1000
-BATCH_SIZE=100
+ENTREZ_EMAIL=tornai.david@med.unideb.hu
+MAX_RESULTS=250
+BATCH_SIZE=40
 """
     
     with open(project_dir / ".env", "w") as f:
         f.write(env_content)
     
     # Létrehoz egy requirements.txt fájlt a szükséges csomagokkal
-    requirements_content = """spacy==3.7.2
-scispacy==0.5.3
-pandas==2.1.4
-numpy==1.24.3
-scipy==1.11.4
-requests==2.31.0
-tenacity==8.2.3
-matplotlib==3.8.2
-seaborn==0.13.1
-biopython==1.83
-nltk==3.8.1
-scikit-learn==1.3.2
-openpyxl==3.1.2
-python-dotenv==1.0.0
+    requirements_content = """spacy==3.7.5
+scispacy==0.5.5
+pandas==2.2.3
+numpy==1.26.4
+scipy==1.15.1
+requests==2.32.3
+tenacity==9.0.0
+matplotlib==3.10.0
+seaborn==0.13.2
+biopython==1.85
+nltk==3.9.1
+scikit-learn==1.6.1
+openpyxl==3.1.5
+python-dotenv==1.0.1
 """
     
     with open(project_dir / "requirements.txt", "w") as f:
@@ -117,7 +117,7 @@ def setup_virtual_environment(project_dir):
         subprocess.run([str(pip_path), "install", "-r", str(project_dir / "requirements.txt")], check=True)
         
         # A scispacy modell telepítése
-        subprocess.run([str(pip_path), "install", "https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.1/en_core_sci_lg-0.5.1.tar.gz"], check=True)
+        subprocess.run([str(pip_path), "install", "https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_core_sci_lg-0.5.4.tar.gz"], check=True)
         
         return activate_script
         
